@@ -9,7 +9,7 @@ Breaking The UI Into A Component Hierarchy For Page 1
 •	RedditLite – contains the entirety of the app
 o	Search Bar
 o	Articles Container
-•	Article
+•	Articles
 
 
 
@@ -21,8 +21,7 @@ Breaking The UI Into A Component Hierarchy For Page 2
 
  
 •	Article container
-o	Article Title
-o	Article Media
+o	Article Title and	Article Media
 o	Comments Container
 
 The Data That Each Component Manipulates and How the Components Fit with One Another
