@@ -1,14 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import './searchButton.css';
-import { searchResultsSlice } from './searchResults/searchResultsSlice.js.js';
+import './searchBarAndButton.css';
 
-export default function searchButton ({keywords}) {
-    const enteredKeyowrds = {}
+export default function searchBarAndButton ({keywords}) {
+    const enteredKeywords = {} //replace with a call to the selector
 
     return (
         <section>
-            
+            <li>
+               //an onClick on the button will go here
+               {} //replace with api for search results consisting of a list of articles 
+            </li>
         </section>
     )
 }
