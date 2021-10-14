@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const searchResults = {
+const searchResults = {
     name: "searchResults",
     initialState: {
-        keywords: ""
+        keywords: "",
         fetching: false,
         results: []
     },
 
     reducers: {
+        searchForAnArticle: (state, action) 
 
         displayFetchingAlert: (state = initialState, action) => {
             if (initialState.fetching) {
-                return <p>Searching for articles of {initialState.keywords}</p>
+                return <p> Searching for articles of {initialState.keywords} </p>
         }},
 
         displaySearchResults: (state = initialState, action) => {
@@ -21,3 +22,7 @@ export const searchResults = {
             ))
         }
 }
+
+export const searchResultsSlice = createSlice(searchResults);
+export const select
+export const {displayFetchingAlert, displaySearchResults} = searchResultsSlice.actions;
