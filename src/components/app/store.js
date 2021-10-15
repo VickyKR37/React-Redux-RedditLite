@@ -4,5 +4,5 @@ import commentsSlice from "../comments/commentsSlice";
 
 export default configureStore({
   reducer: {
-    commentsLice: commentsSlice
+    commentSlice: commentsSlice
 }})
