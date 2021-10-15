@@ -1,8 +1,22 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector  from 'react-redux'};
+import { loadComments, isLoadingComments } from './commentsSlice';
+
+
 export default function Comments() {
-    const comments = {} //replace with a call to the selector
-    return (
-        <section className="comments">
-            {} //use the API with the end point for comments
-        </section>
-    )
-}
+    const dispatch = useDispatch();
+    const comments = useSelector(loadComments);
+    const commentsLoading = useSelector(isLoadingComments);
+
+    if (commentsLoading) {
+        return <div>Loading</div>;
+    } else if (!comments) {
+        return null;
+    }
+
+    return {comments};
+
+};
+
+
+export default Comments;

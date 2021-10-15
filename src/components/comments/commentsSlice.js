@@ -25,7 +25,7 @@ export const commentsSlice = createSlice({
         .addCase(loadComments.fulfilled, (state, action) => {
             state.isLoadingComments = false,
             state.hasError = false;
-            state.comments = action.pauload;
+            state.comments = action.payload;
         })
         .addCase(loadComments.rejected, (state) => {
             state.isLoadingComments = false,
