@@ -22,7 +22,7 @@ export const postArticles = createAsyncThunk (
 )
 
 export const searchBarandButtonSlice = createSlice({
-    name: s'earchBarandButtonSlice',
+    name: 'searchBarandButtonSlice',
     initialState: {
         keywords: '',
         isLoadingArticles: false,
@@ -54,6 +54,8 @@ export const searchBarandButtonSlice = createSlice({
             .addCase(postArticles.fulfilled, (state) => {
                 state.postArtcilesIsPending = false;
                 state.failedToPostArticles = false;
+                const { keywords } = action.payload;
+                state.keywords[keywords].push(action.payload);
             })
             .addCase(postArticles.rejected, (state) => {
                 state.postArtcilesIsPending = false;
@@ -63,3 +65,7 @@ export const searchBarandButtonSlice = createSlice({
 });
 
 export default searchBarandButtonSlice.extraReducers;
+export const selectArticles = (state) => state.searchForArticles.keywords;
+export const selectPostArticles = (state) => state.postArticles.keywords;
+export const isLoading = (state) => state.searchForArticles.isLoadingArticles;
+export const isPosting = (state) => state.postArticles.ResponsepostArtcilesIsPending;
