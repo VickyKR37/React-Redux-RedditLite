@@ -13,7 +13,7 @@ export const loadComments = createAsyncThunk(
 export const commentsSlice = createSlice({
     name: 'loadComments',
     initialState: {
-        comments: undefined,
+        comments: [],
         isLoadingComments: false,
         hasError: false
     },
@@ -23,13 +23,13 @@ export const commentsSlice = createSlice({
             state.hasError = false;
         })
         .addCase(loadComments.fulfilled, (state, action) => {
-            state.isLoadingComments = false,
+            state.isLoadingComments = false;
             state.hasError = false;
             state.comments = action.payload;
         })
         .addCase(loadComments.rejected, (state) => {
-            state.isLoadingComments = false,
-            state.hasError = true,
+            state.isLoadingComments = false;
+            state.hasError = true;
             state.comments = {};
         })
     },
