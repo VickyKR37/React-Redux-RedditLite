@@ -1,28 +1,23 @@
-#Codecademy Project – Reddit Client
+# Codecademy Project – Reddit Client
 
-##Planning Documentation
 
-Reddit is a website where people share links to articles, media and other things on the web. This application, which I have called ReddittLite, will allow users to view and search posts and comments provided by the Reddit provided API. This project will use HTML, CSS, JavaScript, React, Redux, Git and GitHub and includes wireframes.
+**Planning Documentation**
 
-##Breaking The UI Into A Component Hierarchy For Page 1
+Reddit is a website where people share links to articles, media and other things on the web. This application, which I have called ReddittLite, will allow users to view and search posts and comments provided by the Reddit provided API. This project will use HTML, CSS, JavaScript, React, Redux, Git and GitHub and includes wireframes. 
 
-• RedditLite – contains the entirety of the app
-o Search Bar
-o Articles Container
-• Articles
+**Breaking The UI Into A Component Hierarchy For Page 1**
 
-Breaking The UI Into A Component Hierarchy For Page 2
+ - 	RedditLite – contains the entirety of the app 	 		
+	 - 	Search Bar
+   	 -	Articles Container
+   	 -	Comments Container
 
-• Article container
-o Article Title and Article Media
-o Comments Container
+#### The Data That Each Component Manipulates and How the Components Fit with One Another
 
-The Data That Each Component Manipulates and How the Components Fit with One Another
+App Component – takes the data model. 
 
-App Component – takes the data model.
-
-Search Bar and Button – the search bar takes user input and returns articles containing the keywords that have been input by the user, on pressing enter or after clicking on the search button. This search bar is state because it changes over time and can’t be computed from anything.
+Search Bar and Button – the search bar takes user input and returns articles containing the keywords that have been input by the user, on pressing enter or after clicking on the search button. This search bar is state because it changes over time and can't be computed from anything. 
 
 Comments - displays the comments on the articles displayed by Search Bar and Button.
 
-Markdown 1195 bytes 196 words 38 lines Ln 35, Col 84HTML 970 characters 196 words 16 paragraphs
+
