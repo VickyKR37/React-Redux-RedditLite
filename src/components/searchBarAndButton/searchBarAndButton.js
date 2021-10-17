@@ -14,13 +14,13 @@ export const SearchBarAndButton = ({searchButton}) => {
     dispatch(SearchBar());
   }, [dispatch]);
 
-  if (loadingArticles) {
-    return <div>loading state</div>;
-  }
-
   useEffect(() => {
     dispatch(SearchkwButton());
   }, [dispatch]);
+
+  if (loadingArticles) {
+    return <div>loading state</div>;
+  }
 
   return (
     <form action="GET [/r/subreddit]/search" method="get">
