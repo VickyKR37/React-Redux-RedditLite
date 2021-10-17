@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-//place import of searchBarandButtonSlice here
+import searchBarandButtonSlice from "../searchBarAndButton/searchBarandButtonSlice";
 import commentsSlice from "../comments/commentsSlice";
 
 export default configureStore({
   reducer: {
-    commentSlice: commentsSlice
+    commentSlice: commentsSlice,
+    searchBarandButtonSlice: searchBarandButtonSlice
 }})
