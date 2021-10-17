@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const searchForArticles = createAsyncThunk(
     'articles/searchForArticles',
-    async (keywords) => {
-        const data = await fetch (`https://www.reddit.com/search.json?=${keywords}`);
+    async ({keywords}) => {
+        const Response = await fetch (`https://www.reddit.com/search.json?=${keywords}`);
         const json = await Response.json();
         return json;
     }
@@ -12,8 +12,7 @@ export const searchForArticles = createAsyncThunk(
 export const postArticles = createAsyncThunk (
     'articles/postArticles',
     async ({keywords}) => {
-        const data = await
-        fetch(`https://www.reddit.com/search.json?=${keywords}`, {
+        const data = await fetch(`https://www.reddit.com/search.json?=${keywords}`, {
             method: 'POST',
         })
         const json = await data.json();
