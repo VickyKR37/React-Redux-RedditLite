@@ -50,7 +50,7 @@ export const searchBarandButtonSlice = createSlice({
                 state.postArtcilesIsPending = true;
                 state.failedToPostArticles = false;
             })
-            .addCase(postArticles.fulfilled, (state) => {
+            .addCase(postArticles.fulfilled, (state, action) => {
                 state.postArtcilesIsPending = false;
                 state.failedToPostArticles = false;
                 const { keywords } = action.payload;
