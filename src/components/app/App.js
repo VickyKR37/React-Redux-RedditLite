@@ -2,7 +2,6 @@
 import './App.css';
 import React from "react";
 import searchBarAndButton from '../searchBarAndButton/searchBarAndButton';
-import Article from '../article/article';
 
 function App() {
   return (

@@ -32,15 +32,14 @@ export const searchBarandButtonSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(searchForArticles.pending, (state)
-            => {
+            .addCase(searchForArticles.pending, (state) => {
                 state.isLoadingArticles = true;
                 state.failedToLoadArtciles = false;
             })
             .addCase(searchForArticles.fulfilled, (state, action) => {
                 state.isLoadingArticles = false;
                 state.failedToLoadArtciles = false;
-                const (keywords, articles) = action.payload;
+                const {keywords, articles} = action.payload;
                 state.keywords[keywords] = articles;
             })
             .addCase(searchForArticles.rejected, (state, action) => {
@@ -60,8 +59,8 @@ export const searchBarandButtonSlice = createSlice({
             .addCase(postArticles.rejected, (state) => {
                 state.postArtcilesIsPending = false;
                 state.failedToPostArticles = true;
-            })
-    }.
+            });
+    },
 });
 
 export default searchBarandButtonSlice.extraReducers;

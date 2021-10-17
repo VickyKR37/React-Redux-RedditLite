@@ -1,18 +1,17 @@
-import React { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './searchBarAndButton.css';
 import { isLoading, isPosting, selectArticles, selectPostArticles } from "./searchBarandButtonSlice";
-import { useEffect } from 'react';
 
-export const searchBarAndButton = ({searchButton}) => {
+export const SearchBarAndButton = ({searchButton}) => {
   const dispatch = useDispatch();
-  const searchBar = useSelector(selectArticles);
-  const searchButton = useSelector(selectPostArticles);
+  const SearchBar = useSelector(selectArticles);
+  const SearchkwButton = useSelector(selectPostArticles);
   const loadingArticles = useSelector(isLoading);
   const postingArticles = useSelector(isPosting);
 
   useEffect(() => {
-    dispatch(searchBar());
+    dispatch(SearchBar());
   }, [dispatch]);
 
   if (loadingArticles) {
@@ -20,7 +19,7 @@ export const searchBarAndButton = ({searchButton}) => {
   }
 
   useEffect(() => {
-    dispatch(searchButton());
+    dispatch(SearchkwButton());
   }, [dispatch]);
 
   return (
@@ -31,4 +30,4 @@ export const searchBarAndButton = ({searchButton}) => {
   );
 };
 
-export default searchBarAndButton;
+export default SearchBarAndButton;
