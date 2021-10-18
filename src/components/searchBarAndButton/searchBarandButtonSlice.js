@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const searchForArticles = createAsyncThunk("articles/searchForArticles", async({keywords}) => {
-        const response = await fetch(`https://www.reddit.com/search.json?=${keywords}`, { 
+export const searchForArticles = createAsyncThunk("articles/searchForArticles", async(keywords) => {
+    console.log(keywords);
+        const response = await fetch(`https://www.reddit.com/search.json?q=${keywords}`, { 
             method: 'GET'
         });
         const json = await response.json();
@@ -9,16 +10,16 @@ const searchForArticles = createAsyncThunk("articles/searchForArticles", async({
     }
 );
 
-const postArticles = createAsyncThunk(
+export const postArticles = createAsyncThunk(
     'articles/postArticles',
-    async ({keywords}) => {
-        const data = await fetch(`https://www.reddit.com/search.json?=${keywords}`, {
+    async (keywords) => {
+        const data = await fetch(`https://www.reddit.com/search.json?q=${keywords}`, {
             method: 'POST'
         });
         const json = await data.json();
         return json;
     }
-)
+);
 
 const searchBarandButtonSlice = createSlice({
     name: 'searchBarandButtonSlice',
@@ -37,10 +38,10 @@ const searchBarandButtonSlice = createSlice({
                 state.failedToLoadArtciles = false;
             })
             .addCase(searchForArticles.fulfilled, (state, action) => {
+                console.log(action.payload.data.children);
                 state.isLoadingArticles = false;
                 state.failedToLoadArtciles = false;
-                const {keywords, articles} = action.payload;
-                state.keywords[articles] = articles;
+                state.articles = action.payload.data.children;
             })
             .addCase(searchForArticles.rejected, (state, action) => {
                 state.isLoadingArticles = false;
@@ -61,11 +62,19 @@ const searchBarandButtonSlice = createSlice({
                 state.failedToPostArticles = true;
             });
     },
+
+    reducers: {
+        setKeyword: (state, action) => { 
+            return {
+                ...state, keywords: action.payload
+            }
+        }
+    }
 });
-console.log(searchBarandButtonSlice, searchForArticles, postArticles);
+console.log(searchBarandButtonSlice.actions);
 export default searchBarandButtonSlice.reducer;
 export const selectArticles = (state) => {console.log(state); return state.vicky.articles};
 export const selectPostArticles = (state) => state.vicky.articles;
 export const isLoading = (state) => state.vicky.isLoadingArticles;
 export const isPosting = (state) => state.vicky.postArtcilesIsPending;
-export const {} = searchBarandButtonSlice.actions;
+export const {setKeyword} = searchBarandButtonSlice.actions;
