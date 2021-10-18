@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const searchForArticles = createAsyncThunk(
-    'articles/searchForArticles',
-    async ({keywords}) => {
+const searchForArticles = createAsyncThunk('articles/searchForArticles', async({keywords}) => {
         const response = await fetch(`https://www.reddit.com/search.json?=${keywords}`, { 
             method: 'GET'
         });
