@@ -1,14 +1,12 @@
 import React from 'react';
-import { useDispatch, useSelector  from 'react-redux'};
-import { loadComments, isLoadingComments } from './commentsSlice';
+import { useSelector }  from 'react-redux';
+import { loadComments } from './commentsSlice';
 
 
-export default function Comments() {
-    const dispatch = useDispatch();
+    function Comments() {
     const comments = useSelector(loadComments);
-    const commentsLoading = useSelector(isLoadingComments);
 
-    if (commentsLoading) {
+    if (loadComments) {
         return <div>Loading</div>;
     } else if (!comments) {
         return null;

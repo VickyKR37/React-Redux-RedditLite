@@ -12,11 +12,11 @@ export const SearchBarAndButton = ({searchButton}) => {
 
   useEffect(() => {
     dispatch(SearchBar());
-  }, [dispatch]);
+  });
 
   useEffect(() => {
     dispatch(SearchkwButton());
-  }, [dispatch]);
+  });
 
   if (loadingArticles) {
     return <div>loading state</div>;
