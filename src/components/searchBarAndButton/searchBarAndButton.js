@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './searchBarAndButton.css';
-import { isLoading, selectArticles, selectPostArticles } from "./searchBarandButtonSlice";
+import { searchForArticles, postArticles } from "./searchBarandButtonSlice";
 
 export const SearchBarAndButton = ({searchButton}) => {
+  console.log(searchForArticles, postArticles);
   const dispatch = useDispatch();
   const SearchBar = useSelector(selectArticles);
   const SearchkwButton = useSelector(selectPostArticles);

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const searchForArticles = createAsyncThunk('articles/searchForArticles', async({keywords}) => {
+const searchForArticles = createAsyncThunk("articles/searchForArticles", async({keywords}) => {
         const response = await fetch(`https://www.reddit.com/search.json?=${keywords}`, { 
             method: 'GET'
         });
@@ -20,10 +20,11 @@ const postArticles = createAsyncThunk(
     }
 )
 
-export const searchBarandButtonSlice = createSlice({
+const searchBarandButtonSlice = createSlice({
     name: 'searchBarandButtonSlice',
     initialState: {
         keywords: '',
+        articles: [],
         isLoadingArticles: false,
         failedToLoadArtciles: false,
         postArtcilesIsPending: false,
@@ -39,7 +40,7 @@ export const searchBarandButtonSlice = createSlice({
                 state.isLoadingArticles = false;
                 state.failedToLoadArtciles = false;
                 const {keywords, articles} = action.payload;
-                state.keywords[keywords] = articles;
+                state.keywords[articles] = articles;
             })
             .addCase(searchForArticles.rejected, (state, action) => {
                 state.isLoadingArticles = false;
@@ -53,7 +54,7 @@ export const searchBarandButtonSlice = createSlice({
                 state.postArtcilesIsPending = false;
                 state.failedToPostArticles = false;
                 const { keywords } = action.payload;
-                state.keywords[keywords].push(action.payload);
+                state.articles = action.payload;
             })
             .addCase(postArticles.rejected, (state) => {
                 state.postArtcilesIsPending = false;
@@ -61,9 +62,10 @@ export const searchBarandButtonSlice = createSlice({
             });
     },
 });
-
-export default searchBarandButtonSlice.extraReducers;
-export const selectArticles = (state) => state.searchForArticles.keywords;
-export const selectPostArticles = (state) => state.postArticles.keywords;
-export const isLoading = (state) => state.searchForArticles.isLoadingArticles;
-export const isPosting = (state) => state.postArticles.ResponsepostArtcilesIsPending;
+console.log(searchBarandButtonSlice, searchForArticles, postArticles);
+export default searchBarandButtonSlice.reducer;
+export const selectArticles = (state) => {console.log(state); return state.vicky.articles};
+export const selectPostArticles = (state) => state.vicky.articles;
+export const isLoading = (state) => state.vicky.isLoadingArticles;
+export const isPosting = (state) => state.vicky.postArtcilesIsPending;
+export const {} = searchBarandButtonSlice.actions;

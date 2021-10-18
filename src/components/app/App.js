@@ -10,7 +10,7 @@ function App() {
     <div>
       <h1>RedditLite</h1>
       <SearchBarAndButton class="button"/>
-      <Comments />>
+      <Comments />
     </div>
     
   </div>
