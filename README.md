@@ -16,9 +16,9 @@ Reddit is a website where people share links to articles, media and other things
 
 App Component – takes the data model. 
 
-Search Bar and Button – the search bar takes user input and returns articles containing the keywords that have been input by the user, on pressing enter or after clicking on the search button. This search bar is state because it changes over time and can't be computed from anything. 
+Search Bar and Button – the search bar takes user input and returns articles headlines containing the keywords that have been input by the user, on pressing enter or after clicking on the search button. This search bar is state because it changes over time and can't be computed from anything. 
 
-Comments - displays the comments on the articles displayed by Search Bar and Button.
+Comments - allows users to select and article and displays that article in full and displays the comments on the articles displayed by Search Bar and Button.
 
 
 **Wireframe:**
