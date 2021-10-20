@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './searchBarAndButton.css';
 import { searchForArticles, setKeyword, selectArticles } from "./searchBarandButtonSlice";
 import Comments from '../comments/comments';
-import { useEffect } from 'react';
+
 
 
 

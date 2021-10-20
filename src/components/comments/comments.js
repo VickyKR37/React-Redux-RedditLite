@@ -1,18 +1,26 @@
 import React from 'react';
-import { useSelector }  from 'react-redux';
+import { useSelector, useDispatch }  from 'react-redux';
 import { loadComments } from './commentsSlice';
+import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 
 
     function Comments() {
     const comments = useSelector(loadComments);
+    const articles = useSelector(selectArticles);
+    const dispatch = useDispatch();
 
-    if (loadComments) {
-        return <div>Loading</div>;
-    } else if (!comments) {
-        return null;
-    }
 
-    return {comments};
+    function handleClick(e) {
+        e.preventDefault();
+        const article = document.getElementById();
+        dispatch(loadComments(article.data.title));
+
+
+    return (
+        <div className="article">
+            <h1>{ articles.data.title }</h1>
+        </div>
+    )
 
 };
 

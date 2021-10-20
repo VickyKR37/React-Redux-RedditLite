@@ -6,4 +6,4 @@ export default configureStore({
   reducer: {
     commentSlice: commentsSlice,
     vicky: searchBarandButtonSlice
-}})
+}});

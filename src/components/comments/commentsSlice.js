@@ -36,3 +36,5 @@ export const commentsSlice = createSlice({
 
 
 export default commentsSlice.reducer;
+export const isLoadingComments = (state) => state.commentsSlice.isLoadingComments;
+export const hasError = (state) => state.commentsSlice.hasError;
