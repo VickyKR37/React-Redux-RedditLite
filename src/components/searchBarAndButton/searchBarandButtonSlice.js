@@ -10,16 +10,6 @@ export const searchForArticles = createAsyncThunk("articles/searchForArticles", 
     }
 );
 
-export const postArticles = createAsyncThunk(
-    'articles/postArticles',
-    async (keywords) => {
-        const data = await fetch(`https://www.reddit.com/search.json?q=${keywords}`, {
-            method: 'POST'
-        });
-        const json = await data.json();
-        return json;
-    }
-);
 
 const searchBarandButtonSlice = createSlice({
     name: 'searchBarandButtonSlice',
@@ -47,20 +37,6 @@ const searchBarandButtonSlice = createSlice({
                 state.isLoadingArticles = false;
                 state.failedToLoadArtciles = true;
             })
-            .addCase(postArticles.pending, (state) =>{
-                state.postArtcilesIsPending = true;
-                state.failedToPostArticles = false;
-            })
-            .addCase(postArticles.fulfilled, (state, action) => {
-                state.postArtcilesIsPending = false;
-                state.failedToPostArticles = false;
-                const { keywords } = action.payload;
-                state.articles = action.payload;
-            })
-            .addCase(postArticles.rejected, (state) => {
-                state.postArtcilesIsPending = false;
-                state.failedToPostArticles = true;
-            });
     },
 
     reducers: {
