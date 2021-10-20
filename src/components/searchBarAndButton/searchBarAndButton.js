@@ -1,7 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './searchBarAndButton.css';
-import { searchForArticles, setKeyword, selectArticles } from "./searchBarandButtonSlice";
+import { searchForArticles, setKeyword } from "./searchBarandButtonSlice";
 import Comments from '../comments/comments';
 
 

@@ -2,16 +2,16 @@
 import './App.css';
 import React from "react";
 import SearchBarAndButton from '../searchBarAndButton/searchBarAndButton';
-import Comments from '../comments/comments';
+//import Comments from '../comments/comments';
 import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
-import { Provider, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { isLoading } from '../searchBarAndButton/searchBarandButtonSlice';
-import commentsSlice, { isLoadingComments, hasError } from '../comments/commentsSlice';
+//import commentsSlice, { isLoadingComments, hasError } from '../comments/commentsSlice';
 
 export default function App() {
   const articles = useSelector(selectArticles);
   const articlesLoading = useSelector(isLoading);
-  const comments = useSelector(isLoadingComments);
+  //const comments = useSelector(isLoadingComments);
   
   if (!articlesLoading && articles.length !== 0){
     return (
@@ -22,9 +22,9 @@ export default function App() {
     )
   }
 
-  function handleSelectArticle(e) {
-    console.log(e, e.target.id)
-  }
+  // function handleSelectArticle(e) {
+  //   console.log(e, e.target.id)
+  // }
   return (
     <div>
     <div>
