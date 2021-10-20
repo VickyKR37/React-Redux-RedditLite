@@ -4,6 +4,6 @@ import commentsSlice from "../comments/commentsSlice";
 
 export default configureStore({
   reducer: {
-    commentSlice: commentsSlice,
+    commentsSlice: commentsSlice,
     vicky: searchBarandButtonSlice
 }});

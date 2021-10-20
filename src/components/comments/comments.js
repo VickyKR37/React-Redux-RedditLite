@@ -4,7 +4,7 @@ import { loadComments } from './commentsSlice';
 import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 
 
-    function Comments() {
+    export default function Comments() {
     const comments = useSelector(loadComments);
     const articles = useSelector(selectArticles);
     const dispatch = useDispatch();
@@ -17,12 +17,8 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 
 
     return (
-        <div className="article">
-            <h1>{ articles.data.title }</h1>
-        </div>
-    )
+        <div></div>
+    
+    )}
 
-};
-
-
-export default Comments;
+    }
