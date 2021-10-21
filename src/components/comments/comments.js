@@ -1,22 +1,15 @@
 import React from 'react';
-//import {  useDispatch }  from 'react-redux';
 //import { loadComments } from './commentsSlice';
-//import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
-
 
     export default function Comments() {
-   // const comments = useSelector(loadComments);
-    //const articles = useSelector(selectArticles);
-    //const dispatch = useDispatch();
+        //const permalink = loadComments.permalink;
 
+  
 
-    // function handleClick(e) {
-    //     e.preventDefault();
-    //     const article = document.getElementById();
-    //     dispatch(loadComments(article.data.title));
-
-
-    return (
-        <div></div>
-    
-    )}
+        return (
+            <div className="article">
+                <h6>Hi! This is a list of comments associated with this article!</h6>
+                {/* {article.data.permalink}  */}
+            </div>
+        
+        )}
