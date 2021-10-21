@@ -23,7 +23,6 @@ export const SearchBarAndButton = ({searchButton}) => {
       <input type="text" name="search" />
       <button type="submit">SEARCH RedditLite</button>
     </form>
-    <Comments/>
     </div>
   );
 };

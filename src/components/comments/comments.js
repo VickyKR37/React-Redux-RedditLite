@@ -9,7 +9,6 @@ import React from 'react';
         return (
             <div className="article">
                 <h6>Hi! This is a list of comments associated with this article!</h6>
-                {/* {article.data.permalink}  */}
             </div>
         
         )}

@@ -24,8 +24,9 @@ export const commentsSlice = createSlice({
         })
         .addCase(loadComments.fulfilled, (state, action) => {
             state.isLoadingComments = false;
+            console.log(action);
             state.hasError = false;
-            state.comments = action.payload;
+            state.comments = action.payload[1].data.children;
         })
         .addCase(loadComments.rejected, (state) => {
             state.isLoadingComments = false;
@@ -48,4 +49,5 @@ export const isLoadingComments = (state) => state.commentsSlice.isLoadingComment
 export const selectLoadComments = (state) => state.commentsSlice.loadComments;
 export const hasError = (state) => state.commentsSlice.hasError;
 export const selectPermalink = (state) => state.commentsSlice.permalink;
+export const selectComments = (state) => state.commentsSlice.comments;
 export const {setPermalink} = commentsSlice.actions;
