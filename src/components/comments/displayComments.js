@@ -6,21 +6,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { isLoading } from '../searchBarAndButton/searchBarandButtonSlice';
 import { selectPermalink, setPermalink, loadComments, selectComments } from '../comments/commentsSlice';
 
-export default function displayComments() {
+export default function DisplayComments() {
   const articles = useSelector(selectArticles);
   const articlesLoading = useSelector(isLoading);
   const comments = useSelector(selectComments);
   const dispatch = useDispatch();
   const permalink = useSelector(selectPermalink);
   
-    
-
-  function clickArticle(e) {
-    console.log(e.target);
-    dispatch(setPermalink(e.target.id));
-    dispatch(loadComments(e.target.id));
-  }
-
+  
   if (permalink) {
     return (
     <div>
@@ -34,6 +27,13 @@ export default function displayComments() {
     </>
   
     )
+  }
+    
+
+  function clickArticle(e) {
+    console.log(e.target);
+    dispatch(setPermalink(e.target.id));
+    dispatch(loadComments(e.target.id));
   }
 
    function handleSelectArticle(e) {
