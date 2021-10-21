@@ -4,7 +4,7 @@ import Comments from '../comments/comments';
 import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { isLoading } from '../searchBarAndButton/searchBarandButtonSlice';
-import { selectPermalink, setPermalink, selectLoadComments, loadComments, selectComments, isLoadingComments } from '../comments/commentsSlice';
+import { selectPermalink, setPermalink, loadComments, selectComments } from '../comments/commentsSlice';
 
 export default function displayComments() {
   const articles = useSelector(selectArticles);
@@ -12,7 +12,7 @@ export default function displayComments() {
   const comments = useSelector(selectComments);
   const dispatch = useDispatch();
   const permalink = useSelector(selectPermalink);
-  const loadingComments = useSelector(isLoadingComments);
+  
     
 
   function clickArticle(e) {
@@ -40,17 +40,17 @@ export default function displayComments() {
      console.log(e, e.target.id)
      dispatch(loadComments(permalink));
      if (comments) {
-       return <Comments />
+       return <Comments/>
      }
    }
 
    return (
       <div>
-      {
-      articlesLoading === true ? <p>Getting articles...</p> : 
+      <p>
+      {articlesLoading === true ? <p>Getting articles...</p> : 
       articles.map(article => <p id={article.data.permalink} key={index}
-      onClick={handleSelectArticle}>{article.data.title}</p>)
-      }
+      onClick={handleSelectArticle}>{article.data.title}</p>)}
+      </p>
       </div>
    )
 

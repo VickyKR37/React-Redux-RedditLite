@@ -7,6 +7,7 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { isLoading } from '../searchBarAndButton/searchBarandButtonSlice';
 import { selectPermalink, setPermalink, selectLoadComments, loadComments, selectComments, isLoadingComments } from '../comments/commentsSlice';
+import displayComments from '../comments/displayComments';
 
 export default function App() {
   const articles = useSelector(selectArticles);
@@ -22,6 +23,7 @@ export default function App() {
       <h1>RedditLite</h1>
       <SearchBarAndButton class="button" />
       {articles.map(article => <p>{article.data.title}</p> )}
+      <displayComments/>
     </div>
   </div>
        
