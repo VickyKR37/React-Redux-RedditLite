@@ -48,7 +48,7 @@ export default function DisplayComments() {
       <div>
       <p>
       {articlesLoading === true ? <p>Getting articles...</p> : 
-      articles.map(article => <p id={article.data.permalink} key={index}
+      articles.map(article, index => <p id={article.data.permalink} key={index}
       onClick={handleSelectArticle}>{article.data.title}</p>)}
       </p>
       </div>
