@@ -5,6 +5,7 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { isLoading } from '../searchBarAndButton/searchBarandButtonSlice';
 import { selectPermalink, setPermalink, loadComments, selectComments } from '../comments/commentsSlice';
+import webpackConfig from '../../webpack.config';
 
 export default function DisplayComments() {
   const articles = useSelector(selectArticles);
