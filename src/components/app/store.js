@@ -7,5 +7,5 @@ export default configureStore({
   reducer: {
     commentsSlice: commentsSlice,
     vicky: searchBarandButtonSlice,
-    displayComments: DisplayComments
+   // displayComments: DisplayComments
 }});
