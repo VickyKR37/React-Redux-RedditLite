@@ -37,20 +37,8 @@ export default function App() {
       <SearchBarAndButton class="button" />
       {articles.map(article => <p>{article.data.title}</p> )}
       <Comments class="comments" />
-      if (permalink) {
-     return (
-     <div>
-       {comments.map((comment, index) => (<p key={index}>{comment.data.body}</p>))}
-     </div> )
-   }
-   else if (!articlesLoading && articles.length !== 0){
-     return (
-     <>
-       {articles.map((article, index) => (<p key={index} id={article.data.permalink} onClick={clickArticle}>{article.data.title}</p>) )}
-     </>
-  
-     )
-   }
+      {comments.map((comment, index) => (<p key={index}>{comment.data.body}</p>))}
+      {articles.map((article, index) => (<p key={index} id={article.data.permalink} onClick={clickArticle}>{article.data.title}</p>) )}
     </div>
   </div>
        
