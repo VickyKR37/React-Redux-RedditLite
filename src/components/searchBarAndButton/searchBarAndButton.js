@@ -20,7 +20,7 @@ export const SearchBarAndButton = ({searchButton}) => {
   return (
     <div>
     <form onSubmit={ handleSubmit }>
-      <input type="text" name="search" />
+      <input type="text" name="search" onChange={handleSubmit} />
       <button type="submit">SEARCH RedditLite</button>
     </form>
     </div>
