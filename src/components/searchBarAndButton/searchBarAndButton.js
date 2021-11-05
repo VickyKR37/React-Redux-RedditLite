@@ -15,14 +15,14 @@ export const SearchBarAndButton = ({searchButton}) => {
    e.preventDefault();
    const keyword = document.getElementsByName("search")[0].value;
    dispatch(setKeyword(keyword));
-   dispatch(clearResults);
+   dispatch(clearResults());
    dispatch(searchForArticles(keyword));
   }
 
   return (
     <div>
     <form onSubmit={ handleSubmit }>
-      <input type="text" name="search" onChange={handleSubmit} />
+      <input type="text" name="search" />
       <button type="submit">SEARCH RedditLite</button>
     </form>
     </div>
