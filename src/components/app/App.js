@@ -31,8 +31,11 @@ export default function App() {
       {/* {articles.map(article => <p>{article.data.title}</p> )} */}
       <Comments />
       { comments.length > 0 ? comments.map( (comment, i) => (<p key={i}> { comment.data.body } </p>)) :
-      articles.map((article, index) => (<p key={index} id={article.data.permalink} onClick={clickArticle} >
+      articles.map((article, index) => (<p key={index} id={article.data.permalink} class="article" onClick={clickArticle} >
       {article.data.title}</p>)) }
+    </div>
+    <div>
+      <img class="logo" src="src\icon\reddit-logo.png"/>
     </div>
   </div> 
   );
