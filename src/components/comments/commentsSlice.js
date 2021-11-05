@@ -39,8 +39,14 @@ export const commentsSlice = createSlice({
             return {
                 ...state, permalink: action.payload
             }
+        },
+        clearResults: (state) => {
+                return {
+                ...state, comments: []
         }
     }
+}
+        
 });
 
 
@@ -51,3 +57,4 @@ export const hasError = (state) => state.commentsSlice.hasError;
 export const selectPermalink = (state) => state.commentsSlice.permalink;
 export const selectComments = (state) => state.commentsSlice.comments;
 export const {setPermalink} = commentsSlice.actions;
+export const {clearResults} = commentsSlice.action;
