@@ -10,23 +10,12 @@ export const searchForArticles = createAsyncThunk("articles/searchForArticles", 
     }
 );
 
-export const loadArticle = createAsyncThunk("article/loadArticle", async(headline) => {
-    const response = await fetch(''), {
-        method: 'GET' 
-    });
-    const json = await response.json();
-    return json;
-    }
-});
-
 
 const searchBarandButtonSlice = createSlice({
     name: 'searchBarandButtonSlice',
     initialState: {
         keywords: '',
         articles: [],
-        headline: ''
-        article: []
         isLoadingArticles: false,
         failedToLoadArtciles: false,
         postArtcilesIsPending: false,
