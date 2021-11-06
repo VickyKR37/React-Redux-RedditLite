@@ -16,9 +16,9 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
           }
 
           function headline(comments) {
-              if (comments.length > 0) {
+              if (comments.length < 0) {
                   return <h6 class="headline">Hi! Click on a headline for a list of comments associated with the article!</h6>
-              }
+              } 
           }
 
         return (
