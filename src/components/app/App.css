@@ -40,12 +40,11 @@
 }
 
 #container {
-  text-align: left;
   border-style: solid;
   border-color: gold;
-  list-style-type: U+1F449;
+  text-align: left;
 }
 
-.article .results {
-  
+#container ::before {
+  content: &#9758;
 }
