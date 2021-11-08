@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  background-color: teal;
+  
 }
 
 .App-header {
-  background-color: #283034;
+  background-color: teal;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,5 +35,6 @@
 
 .logo {
   size: 75%;
-  align-items: center;
+  position: relative;
+  background-color: teal
 }

@@ -25,7 +25,7 @@ export default function App() {
       <Comments />
     </div>
     <div>
-      <img src={'public\reddit-logo.png'} alt="Reddit Logo"/>
+      <img class="logo" src={'reddit-logo.png'} alt="Reddit Logo"/>
     </div>
   </div> 
   );
