@@ -38,3 +38,8 @@
   position: relative;
   background-color: teal
 }
+
+.container {
+  border-style: solid;
+  border-color: gold;
+}
