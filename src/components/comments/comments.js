@@ -16,15 +16,17 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
           }
 
           function headline() {
-              if (comments.length < 0) {
+              if (comments.length == 0 && articles.length > 0) {
                   return <h6 class="headline">Hi! Click on a headline for a list of comments associated with the article!</h6>
               } 
           }
 
         return (
+            <div>
             <div class="headline">
             {headline()}
-            <div class="container">
+            </div>
+            <div id="container">
                 { comments.length > 0 ? comments.map( (comment, i) => (<p key={i} class="results"> { comment.data.body } </p>)) :
                 articles.map((article, index) => (<p class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
                 {article.data.title}</p>)) }  
