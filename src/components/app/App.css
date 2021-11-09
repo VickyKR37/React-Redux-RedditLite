@@ -46,5 +46,5 @@
 }
 
 #container ::before {
-  content: /&#9757;
+  content: "\1F449";
 }
