@@ -47,5 +47,5 @@ export default articleSlice.reducer;
 export const isLoadingArticle = (state) => state.articleSlice.isLoadingArticle;
 export const selectLoadArticle = (state) => state.articleSlice.loadArticle;
 export const hasError = (state) => state.articleSlice.hasError;
-export const selectHeadline= (state) => state.articleSlice.headline;
+export const selectHeadline = (state) => state.articleSlice.headline;
 export const {setHeadline} = articleSlice.actions;
