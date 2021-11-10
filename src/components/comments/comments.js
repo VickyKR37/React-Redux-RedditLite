@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPermalink, loadComments, selectComments, selectPermalink } from '../comments/commentsSlice';
 import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
+import './comments.css';
 
     export default function Comments() {
         const articles = useSelector(selectArticles);
@@ -21,16 +22,26 @@ import { selectArticles } from '../searchBarAndButton/searchBarandButtonSlice';
               } 
           }
 
+          function ArtilceView(article, index) {
+            // returns an article view
+            return (
+                <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
+                    <h5>{article.data.title}</h5>
+                    <img class="article-img" src={article.data.url} />
+                </div>
+            )
+          }
+
         return (
             <div>
             <div class="headline">
             {headline()}
             </div>
             <div id="container">
-                { comments.length > 0 ? comments.map( (comment, i) => (<p key={i} class="results"> { comment.data.body } </p>)) :
-                articles.map((article, index) => (<p class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
-                {article.data.title}</p>)) }  
+            {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} </p>)) :
+                    articles.map(ArtilceView)}
             </div>
             </div>
         
         )}
+    
