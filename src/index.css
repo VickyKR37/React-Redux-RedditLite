@@ -2,6 +2,7 @@ h1 {
   margin: 0;
   font-family: "bebas neue";
   text-align: center;
+  color: teal;
 }
 
 body {
@@ -21,5 +22,5 @@ body {
 }
 
 #root {
-  background-color: teal;
+  background-color: white;
 }
