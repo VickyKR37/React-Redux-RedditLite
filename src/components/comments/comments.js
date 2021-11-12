@@ -12,8 +12,8 @@ import './comments.css';
 
         function clickArticle(e) {
             console.log(e.target);
-            dispatch(setPermalink(e.target.id));
-            dispatch(loadComments(e.target.id));
+            dispatch(setPermalink(e.target.closest(".article") ));
+            dispatch(loadComments(e.target.closest(".article") ));
           }
 
           function headline() {
