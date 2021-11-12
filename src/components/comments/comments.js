@@ -12,8 +12,8 @@ import './comments.css';
 
         function clickArticle(e) {
             console.log(e.target);
-            dispatch(setPermalink(e.target.closest(".article") ));
-            dispatch(loadComments(e.target.closest(".article") ));
+            dispatch(setPermalink(e.target.closest(".article").id ));
+            dispatch(loadComments(e.target.closest(".article").id ));
           }
 
           function headline() {
@@ -22,7 +22,7 @@ import './comments.css';
               } 
           }
 
-          function ArtilceView(article, index) {
+          function ArticleView(article, index) {
             // returns an article view
             return (
                 <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
@@ -39,7 +39,7 @@ import './comments.css';
             </div>
             <div id="container">
             {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} </p>)) :
-                    articles.map(ArtilceView)}
+                    articles.map(ArticleView)}
             </div>
             </div>
         
