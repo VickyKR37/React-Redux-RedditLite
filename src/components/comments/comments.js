@@ -27,7 +27,11 @@ import './comments.css';
             return (
                 <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
                     <h5>{article.data.title}</h5>
-                    <img class="article-img" src={article.data.url} />
+                    <img class="article-img" src={article.data.url}/>
+                    <h6>Likes</h6>
+                    <h6>User</h6>
+                    <h6>Points and Comments</h6>
+                    <h6>Users possible actions</h6>>
                 </div>
             )
           }
@@ -39,7 +43,8 @@ import './comments.css';
             </div>
             <div id="container">
             {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} </p>)) :
-                    articles.map(ArticleView)}
+                    articles.map(ArticleView) }
+           
             </div>
             </div>
         
