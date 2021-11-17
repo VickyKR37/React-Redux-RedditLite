@@ -14,6 +14,14 @@ import './comments.css';
             console.log(e.target);
             dispatch(setPermalink(e.target.closest(".article").id ));
             dispatch(loadComments(e.target.closest(".article").id ));
+            return (
+                <div>
+                    <h6>Likes</h6>
+                    <h6>User</h6>
+                    <h6>Points and Comments</h6>
+                    <h6>Users possible actions</h6>>
+                </div>
+            )
           }
 
           function headline() {
