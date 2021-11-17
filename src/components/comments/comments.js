@@ -19,6 +19,7 @@ import './comments.css';
                     <h6>Likes</h6>
                     <h6>User</h6>
                     <h6>Points and Comments</h6>
+                    <h6>Votes</h6>
                     <h6>Users possible actions</h6>>
                 </div>
             )
@@ -39,6 +40,7 @@ import './comments.css';
                     <h6>Likes</h6>
                     <h6>User</h6>
                     <h6>Points and Comments</h6>
+                    <h6>Votes</h6>
                     <h6>Users possible actions</h6>>
                 </div>
             )
