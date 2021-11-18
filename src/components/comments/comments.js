@@ -19,18 +19,17 @@ import './comments.css';
             console.log(e.target);
             dispatch(setPermalink(e.target.closest(".article").id ));
             dispatch(loadComments(e.target.closest(".article").id ));
-            return (
-                <div>
-                    <h6>Username: {articles.data.name}</h6>
-                    <h6>Time posted: {getTime}</h6>
-                    <h6>Subreddit: {articles.data.display_name}</h6>
-                    <h6>Likes: {articles.data.likes}</h6>
-                    <h6>Points and Comments</h6>
-                    <h6>Up Votes: {articles.data.ups}</h6>
-                    <h6>Down Votes: {articles.data.downs}</h6>
-                    <h6>Users possible actions</h6>>
-                </div>
-            )
+            // return (
+            //     <div>
+            //         <h6>Posted By: {article.data.author}</h6>
+            //         <h6>Time posted: {getTime}</h6>
+            //         <h6>Subreddit: {article.data.display_name}</h6>
+            //         <h6>Comments: {article.data.num_comments}</h6>
+            //         <h6>Up Votes: {article.data.ups}</h6>
+            //         <h6>Down Votes: {article.data.downs}</h6>
+            //         <h6>Users possible actions</h6>
+            //     </div>
+            // )
           }
 
           function headline() {
@@ -45,7 +44,7 @@ import './comments.css';
                 <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
                     <h5>{article.data.title}</h5>
                     <img class="article-img" src={article.data.url}/>
-                    <h6>Username: {article.data.author}</h6>
+                    <h6>Posted By: {article.data.author}</h6>
                     <h6>Time posted: {getTime}</h6>
                     <h6>Subreddit: {article.data.display_name}</h6>
                     <h6>Comments: {article.data.num_comments}</h6>
@@ -62,7 +61,7 @@ import './comments.css';
             {headline()}
             </div>
             <div id="container">
-            {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} {comment.data.body.author} </p>)) :
+            {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} {comment.data.author} </p>)) :
                     articles.map(ArticleView) }
            
             </div>
