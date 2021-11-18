@@ -21,12 +21,13 @@ import './comments.css';
             dispatch(loadComments(e.target.closest(".article").id ));
             return (
                 <div>
-                    <h6>{getTime}</h6>
-                    <h6>{articles.data.likes}</h6>
-                    <h6>{articles.data.name}</h6>
+                    <h6>Username: {articles.data.name}</h6>
+                    <h6>Time posted: {getTime}</h6>
+                    <h6>Subreddit: {articles.data.display_name}</h6>
+                    <h6>Likes: {articles.data.likes}</h6>
                     <h6>Points and Comments</h6>
-                    <h6>{articles.data.ups}</h6>
-                    <h6>{articles.data.downs}</h6>
+                    <h6>Up Votes: {articles.data.ups}</h6>
+                    <h6>Down Votes: {articles.data.downs}</h6>
                     <h6>Users possible actions</h6>>
                 </div>
             )
@@ -44,13 +45,14 @@ import './comments.css';
                 <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
                     <h5>{article.data.title}</h5>
                     <img class="article-img" src={article.data.url}/>
-                    <h6>{article.data.created.toLocaleString()}</h6>
-                    <h6>{article.data.likes}</h6>
-                    <h6>{article.data.name}</h6>
+                    <h6>Username: {articles.data.author}</h6>
+                    <h6>Time posted: {getTime}</h6>
+                    <h6>Subreddit: {articles.data.display_name}</h6>
+                    <h6>Likes: {articles.data.likes}</h6>
                     <h6>Points and Comments</h6>
-                    <h6>{article.data.ups}</h6>
-                    <h6>{article.data.downs}</h6>
-                    <h6>Users possible actions</h6>>
+                    <h6>Up Votes: {articles.data.ups}</h6>
+                    <h6>Down Votes: {articles.data.downs}</h6>
+                    <h6>Users possible actions</h6>
                 </div>
             )
           }
