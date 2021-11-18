@@ -17,7 +17,8 @@ import './comments.css';
 
         function displayExtraInfo() {
             const article = articles.find( article => article.data.permalink === permalink);
-                return <div>
+                return (
+                    <div>
                     <h5>{article}</h5>
                     <h6>Posted By: {article.data.author}</h6>
                     {/* <h6>Time posted: {getTime}</h6> */}
@@ -26,14 +27,13 @@ import './comments.css';
                     <h6>Up Votes: {article.data.ups}</h6>
                     <h6>Down Votes: {article.data.downs}</h6>
                     </div>
-            }
+                )   
+        }
 
         function clickArticle(e) {
             console.log(e.target);
             dispatch(setPermalink(e.target.closest(".article").id ));
-            dispatch(loadComments(e.target.closest(".article").id ));
-            displayExtraInfo();
-            
+            dispatch(loadComments(e.target.closest(".article").id ));           
           }
 
 
@@ -71,6 +71,6 @@ import './comments.css';
            
             </div>
             </div>
-        
-        )}
+        )
+    }
     
