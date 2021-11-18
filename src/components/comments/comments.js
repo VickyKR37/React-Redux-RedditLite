@@ -15,26 +15,10 @@ import './comments.css';
         //     return time.toLocaleString();
         // }
 
-        function clickArticle(e) {
-            console.log(e.target);
-            dispatch(setPermalink(e.target.closest(".article").id ));
-            dispatch(loadComments(e.target.closest(".article").id ));
-            // return (
-            //     <div>
-            //         <h6>Posted By: {article.data.author}</h6>
-            //         <h6>Time posted: {getTime}</h6>
-            //         <h6>Subreddit: {article.data.display_name}</h6>
-            //         <h6>Comments: {article.data.num_comments}</h6>
-            //         <h6>Up Votes: {article.data.ups}</h6>
-            //         <h6>Down Votes: {article.data.downs}</h6>
-            //         <h6>Users possible actions</h6>
-            //     </div>
-            // )
-          }
-
-          function displayExtraInfo(article) {
-            if (articles === article.data.permalink) {
+        function displayExtraInfo() {
+            const article = articles.find( article => article.data.permalink === permalink);
                 return <div>
+                    <h5>{article}</h5>
                     <h6>Posted By: {article.data.author}</h6>
                     {/* <h6>Time posted: {getTime}</h6> */}
                     <h6>Subreddit: {article.data.display_name}</h6>
@@ -43,7 +27,15 @@ import './comments.css';
                     <h6>Down Votes: {article.data.downs}</h6>
                     </div>
             }
+
+        function clickArticle(e) {
+            console.log(e.target);
+            dispatch(setPermalink(e.target.closest(".article").id ));
+            dispatch(loadComments(e.target.closest(".article").id ));
+            displayExtraInfo();
+            
           }
+
 
           function headline() {
               if (comments.length == 0 && articles.length > 0) {
