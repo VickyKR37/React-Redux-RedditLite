@@ -48,8 +48,7 @@ import './comments.css';
                     <h6>Username: {article.data.author}</h6>
                     <h6>Time posted: {getTime}</h6>
                     <h6>Subreddit: {article.data.display_name}</h6>
-                    <h6>Likes: {article.data.likes}</h6>
-                    <h6>Points and Comments</h6>
+                    <h6>Comments: {article.data.num_comments}</h6>
                     <h6>Up Votes: {article.data.ups}</h6>
                     <h6>Down Votes: {article.data.downs}</h6>
                     <h6>Users possible actions</h6>
