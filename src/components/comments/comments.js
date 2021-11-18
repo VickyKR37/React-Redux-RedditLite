@@ -10,16 +10,23 @@ import './comments.css';
         const comments = useSelector(selectComments);
         let permalink = useSelector(selectPermalink);
 
+        function getTime() {
+            let time = articles.data.created;
+            return time.toLocaleString();
+        }
+
         function clickArticle(e) {
             console.log(e.target);
             dispatch(setPermalink(e.target.closest(".article").id ));
             dispatch(loadComments(e.target.closest(".article").id ));
             return (
                 <div>
-                    <h6>Likes</h6>
-                    <h6>User</h6>
+                    <h6>{getTime}</h6>
+                    <h6>{articles.data.likes}</h6>
+                    <h6>{articles.data.name}</h6>
                     <h6>Points and Comments</h6>
-                    <h6>Votes</h6>
+                    <h6>{articles.data.ups}</h6>
+                    <h6>{articles.data.downs}</h6>
                     <h6>Users possible actions</h6>>
                 </div>
             )
@@ -37,10 +44,12 @@ import './comments.css';
                 <div class="article" key={index} id={article.data.permalink} onClick={clickArticle} >
                     <h5>{article.data.title}</h5>
                     <img class="article-img" src={article.data.url}/>
-                    <h6>Likes</h6>
-                    <h6>User</h6>
+                    <h6>{article.data.created.toLocaleString()}</h6>
+                    <h6>{article.data.likes}</h6>
+                    <h6>{article.data.name}</h6>
                     <h6>Points and Comments</h6>
-                    <h6>Votes</h6>
+                    <h6>{article.data.ups}</h6>
+                    <h6>{article.data.downs}</h6>
                     <h6>Users possible actions</h6>>
                 </div>
             )
@@ -52,7 +61,7 @@ import './comments.css';
             {headline()}
             </div>
             <div id="container">
-            {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} </p>)) :
+            {comments.length > 0 ? comments.map((comment, i) => (<p key={i} class="results"> {comment.data.body} {comment.data.body.author} </p>)) :
                     articles.map(ArticleView) }
            
             </div>
