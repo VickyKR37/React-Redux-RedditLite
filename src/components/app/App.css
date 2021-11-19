@@ -24,6 +24,11 @@
   color: #008B8B;
 }
 
+.commentAuthor {
+  font-family: "Ascender Sans";
+  margin: 25px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
