@@ -30,7 +30,7 @@ export default function Comments() {
         <h6>Posted By: {article.data.author}</h6>
         <img className="article-img" src={article.data.url} />
         {/* <h6>Time posted: {getTime()}</h6> */}
-        <h6>Subreddit: {article.data.display_name}</h6>
+        <h6>Subreddit: {article.data.subreddit}</h6>
         <h6>Comments: {article.data.num_comments}</h6>
         <h6>Up Votes: {article.data.ups}</h6>
         <h6>Down Votes: {article.data.downs}</h6>
