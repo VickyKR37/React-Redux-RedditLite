@@ -26,7 +26,8 @@
 
 .commentAuthor {
   font-family: "Ascender Sans";
-  margin: 25px;
+  margin-right: 12px;
+  color: coral;
 }
 
 @keyframes App-logo-spin {
@@ -55,6 +56,6 @@
   text-align: left;
 }
 
-#container ::before {
+#comments::before {
   content: "\1F449";
 }
