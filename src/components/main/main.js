@@ -5,8 +5,8 @@ function Main() {
     <div>
       <Main>
         <Switch>
-          <Route path='src\components\searchBarAndButton\searchBarAndButton.js' component={SearchBarAndButton} />
-          <Route path='src\components\comments\comments.js' component={Comments} />
+          <Route path='\searchBarAndButton' component={SearchBarAndButton} />
+          <Route path='\comments' component={Comments} />
         </Switch>
       </Main>
     </div>

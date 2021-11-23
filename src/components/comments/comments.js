@@ -55,8 +55,7 @@ export default function Comments() {
     if (comments.length == 0 && articles.length > 0) {
       return (
         <h4 class="headline">
-          Hi! Click on a headline for a list of comments associated with the
-          article!
+          Hi! Click on a headline for a list of associated comments!
         </h4>
       );
     }
