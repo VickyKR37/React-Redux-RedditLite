@@ -15,10 +15,10 @@ export default function Comments() {
   const comments = useSelector(selectComments);
   let permalink = useSelector(selectPermalink);
 
-  function getTime(article) {
-      let time = article.data.created;
-      return time.toLocaleString();
-  }
+  // function getTime(article) {
+  //     let time = article.data.created;
+  //     return time.toLocaleString();
+  // }
 
   function displayExtraInfo() {
     const article = articles.find(
@@ -28,7 +28,7 @@ export default function Comments() {
       <div>
         <h5>{article.data.title}</h5>
         <h6>Posted By: {article.data.author}</h6>
-        <img className="article-img" src={article.data.url} />
+        <img className="article-img" src={article.data.url} alt="realted to the article"/>
         {/* <h6>Time posted: {getTime()}</h6> */}
         <h6>Subreddit: {article.data.subreddit}</h6>
         <h6>Comments: {article.data.num_comments}</h6>
@@ -52,7 +52,7 @@ export default function Comments() {
   }
 
   function headline() {
-    if (comments.length == 0 && articles.length > 0) {
+    if (comments.length === 0 && articles.length > 0) {
       return (
         <h4 class="headline">
           Hi! Click away for a list of associated comments!
@@ -71,7 +71,7 @@ export default function Comments() {
         onClick={clickArticle}
       >
         <h5 id="articleTitle">{article.data.title}</h5>
-        <img class="thumbnail" src={article.data.thumbnail} />
+        <img class="thumbnail" src={article.data.thumbnail} alt="related to the article" />
         <h6>Posted By: {article.data.author}</h6>
         {/* <h6>Time posted: {getTime()}</h6> */}
         <h6>Subreddit: {article.data.subreddit}</h6>
