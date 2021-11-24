@@ -2,7 +2,6 @@ import "./App.css";
 import React from "react";
 import SearchBarAndButton from "../searchBarAndButton/searchBarAndButton";
 import Comments from "../comments/comments";
-import { Switch } from "react-router";
 
 export default function App() {
   return (
