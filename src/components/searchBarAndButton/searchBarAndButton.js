@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { searchForArticles, setKeyword } from "./searchBarandButtonSlice";
 import { clearResults } from "../comments/commentsSlice";
+import { displayContainer } from "../comments/comments";
 
 export const SearchBarAndButton = ({ searchButton }) => {
   const dispatch = useDispatch();
@@ -13,14 +14,6 @@ export const SearchBarAndButton = ({ searchButton }) => {
     dispatch(clearResults());
     dispatch(searchForArticles(keyword));
   }
-
-  function displayContainer(e) {
-    e.preventDefault();
-    var border = document.getElementById("container");
-    return {
-      border.style.display = 'block';
-  }
-  };
 
   return (
     <div>

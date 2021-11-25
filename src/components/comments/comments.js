@@ -24,6 +24,15 @@ export default function Comments() {
     const article = articles.find(
       (article) => article.data.permalink === permalink
     );
+
+  function displayContainer(e) {
+      e.preventDefault();
+      var border = document.getElementById("container");
+      return {
+        border.style.display = 'block';
+    }
+    };
+    
     return (
       <div>
         <h5>{article.data.title}</h5>
