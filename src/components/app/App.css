@@ -54,6 +54,8 @@
   border-style: solid;
   border-color: gold;
   text-align: left;
+  margin: 5%;
+  padding: 2%;
 }
 
 #comments::before {

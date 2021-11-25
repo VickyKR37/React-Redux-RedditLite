@@ -18,7 +18,6 @@ export default function App() {
         </div>
       </div>
       <Switch>
-        <Route path="/search" component={SearchBarAndButton} />
         <Route path="/comments" component={Comments} />
         {/* <Route component={Error} /> */}
       </Switch>
