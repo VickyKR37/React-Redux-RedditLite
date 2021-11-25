@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import SearchBarAndButton from "../searchBarAndButton/searchBarAndButton";
 import Comments from "../comments/comments";
-import { Switch, Route, Router } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 export default function App() {
   return (
@@ -18,9 +18,9 @@ export default function App() {
         </div>
       </div>
       <Switch>
-        <Route path="\searchBarAndButton" component={SearchBarAndButton} />
-        <Route path="\comments" component={Comments} />
-        <Route component={Error} />
+        <Route path="/search" component={SearchBarAndButton} />
+        <Route path="/comments" component={Comments} />
+        {/* <Route component={Error} /> */}
       </Switch>
     </Router>
   );
