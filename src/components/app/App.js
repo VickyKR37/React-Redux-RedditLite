@@ -3,6 +3,7 @@ import React from "react";
 import SearchBarAndButton from "../searchBarAndButton/searchBarAndButton";
 import Comments from "../comments/comments";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import SearchResults from "../SearchResults/searchResults";
 
 export default function App() {
   return (
@@ -11,16 +12,15 @@ export default function App() {
         <div>
           <h1>RedditLite</h1>
           <SearchBarAndButton class="button" />
-          <Comments />
+          <Switch>
+            <Route path="/search/:keyword" component={SearchResults} />
+            <Route path="/comments" component={Comments} />
+          </Switch>
         </div>
         <div>
           <img class="logo" src={"reddit-logo.png"} alt="Reddit Logo" />
         </div>
       </div>
-      <Switch>
-        <Route path="/comments" component={Comments} />
-        {/* <Route component={Error} /> */}
-      </Switch>
     </Router>
   );
 }
