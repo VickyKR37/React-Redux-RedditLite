@@ -14,7 +14,7 @@ export default function App() {
           <SearchBarAndButton class="button" />
           <Switch>
             <Route path="/search/:keyword" component={SearchResults} />
-            <Route path="/comments" component={Comments} />
+            <Route path="/comments/:permalink" component={Comments} />
           </Switch>
         </div>
         <div>
