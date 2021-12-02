@@ -36,6 +36,7 @@ export default function SearchResults() {
   function ArticleView(article, index) {
     // returns an article view
     return (
+      <div id="container">
         <div
           class="article"
           key={index}
@@ -55,6 +56,7 @@ export default function SearchResults() {
           <h6>Up Votes: {article.data.ups}</h6>
           <h6>Down Votes: {article.data.downs}</h6>
         </div>
+      </div>
     );
   }
 

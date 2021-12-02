@@ -4,11 +4,11 @@ import { selectComments, selectPermalink } from "../comments/commentsSlice";
 import { selectArticles } from "../searchBarAndButton/searchBarandButtonSlice";
 import "./comments.css";
 
-export function displayContainer(e) {
-  e.preventDefault();
-  var border = document.getElementById("container");
-  border.style.display = 'block';
-}
+// export function displayContainer(e) {
+//   e.preventDefault();
+//   var border = document.getElementById("container");
+//   border.style.display = 'block';
+// }
 
 export default function Comments() {
   const articles = useSelector(selectArticles);

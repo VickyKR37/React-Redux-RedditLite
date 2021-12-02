@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { searchForArticles, setKeyword } from "./searchBarandButtonSlice";
-import { displayContainer } from "../comments/comments";
+// import { displayContainer } from "../comments/comments";
 import { clearResults } from "../comments/commentsSlice";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export const SearchBarAndButton = ({ searchButton }) => {
 
   return (
     <div>
-      <form onSubmit={function(e) {handleSubmit(e); displayContainer(e)} }>
+      <form onSubmit={ handleSubmit }>
         <input type="text" name="search" />
         <button type="submit">SEARCH RedditLite</button>
       </form>
